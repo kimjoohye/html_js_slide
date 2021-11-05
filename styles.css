@@ -1,0 +1,283 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+h1{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.horizontal,
+.horizontal_loop,
+.vertical,
+.fade{
+    position: relative;
+    width: 100%;
+    height: 430px;
+}
+/* 가로 슬라이드 */
+.images_wrapper{
+    position: relative;
+    top: 50px; left: 50%;
+    transform: translate(-50%,0);
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+}
+ .images{
+    display: flex;
+    position: relative;
+    left: 0;
+    width: 3000px;
+    transition: all 0.5s;
+}
+.images > img{
+    width: 600px;
+    height: 300px;
+}
+/* 버튼 */
+.button_prev,
+.button_next{
+    position: absolute;
+    top: 201px;
+    border: none;
+    background-color: cornflowerblue;
+    border-radius: 30px;
+    width: 50px; height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+.button_prev{
+    left:30px;
+}
+.button_next{
+    right: 30px;
+}
+
+.button_next:disabled,
+.button_prev:disabled,
+.button_next:disabled:hover,
+.button_prev:disabled:hover{
+    background-color: gray;
+}
+
+.button_next:hover,
+.button_prev:hover{
+    background-color: rgb(21, 92, 224);
+}
+
+/* 페이징 */
+.hpaging{
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: flex;
+}
+.hpaging > div{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* 가로 슬라이드 무한루프 */
+
+.Limages_wrapper,
+.vimages_wrapper{/*여기는 세로 슬라이드도 있음*/
+    position: relative;
+    left: 50%;
+    margin-top: 30px;
+    transform: translate(-50%,0);
+    width: 600px;
+    height: 300px;
+    overflow: hidden;
+}
+.Limages{
+    display: flex;
+    position: absolute;
+    left: -600px;
+    width: 4200px;
+    transition: left 0.5s;
+}
+.Limages > img{
+    width: 600px;
+    height: 300px;
+}
+/* 버튼 */
+.loop_prev,
+.loop_next{
+    position: absolute;
+    top: 201px;
+    border: none;
+    background-color: cornflowerblue;
+    border-radius: 30px;
+    width: 50px; height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+.loop_prev{
+    left:30px;
+}
+.loop_next{
+    right: 30px;
+}
+
+.loop_next:hover,
+.loop_prev:hover{
+    background-color: rgb(21, 92, 224);
+}
+
+.loop_paging{
+    position: absolute;
+    top: 350px;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: flex;
+}
+.loop_paging > div{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid cornflowerblue;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+/* 세로 슬라이드 */
+.vimages{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+    width: 600px;
+    height: 1500px;
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+.vimages > img{
+    width: 600px;
+    height: 300px;
+    transition-duration: 0.5s;
+}
+/* 버튼 */
+.verti_prev,
+.verti_next{
+    position: absolute;
+    top: 150px;
+    border: none;
+    background-color: cornflowerblue;
+    border-radius: 30px;
+    width: 50px; height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+.verti_prev{
+    left:30px;
+}
+.verti_next{
+    right: 30px;
+}
+.verti_next:disabled,
+.verti_prev:disabled,
+.verti_next:disabled:hover,
+.verti_prev:disabled:hover{
+    background-color: gray;
+}
+
+.verti_next:hover,
+.verti_prev:hover{
+    background-color: rgb(21, 92, 224);
+}
+
+.verti_paging{
+    position: absolute;
+    top: 100px;
+    left: 67%;
+    transform: translate(-67%,0);
+    display: flex;
+    flex-direction: column;
+}
+.verti_paging > div{
+    width: 10px;
+    height: 10px;
+    border-radius: 10px;
+    border: 2px solid cornflowerblue;
+    background-color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+
+/* 페이드인/아웃 슬라이드 */
+.fade_images{
+    display: flex;
+    position: relative;
+    left: 0;
+    height: 300px;
+}
+.fade_images > img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 600px;
+    height: 300px;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+/* 버튼 */
+.fade_prev,
+.fade_next{
+    position: absolute;
+    top: 201px;
+    border: none;
+    background-color: cornflowerblue;
+    border-radius: 30px;
+    width: 50px; height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+.fade_prev{
+    left:30px;
+}
+.fade_next{
+    right: 30px;
+}
+
+.fade_next:disabled,
+.fade_prev:disabled,
+.fade_next:disabled:hover,
+.fade_prev:disabled:hover{
+    background-color: gray;
+}
+
+.fade_next:hover,
+.fade_prev:hover{
+    background-color: rgb(21, 92, 224);
+}
+
+/* 페이징 */
+.fade_paging{
+    position: absolute;
+    top: 400px;
+    left: 50%;
+    transform: translate(-50%,0);
+    display: flex;
+}
+.fade_paging > div{
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    border: 2px solid black;
+    margin-right: 10px;
+    cursor: pointer;
+    font-size: 5px;
+    text-align: center;
+    font-weight: bold;
+}
