@@ -325,6 +325,13 @@ h1{
     right: 30px;
 }
 
+.multi_next:disabled,
+.multi_prev:disabled,
+.multi_next:disabled:hover,
+.multi_prev:disabled:hover{
+    background-color: gray;
+}
+
 .multi_next:hover,
 .multi_prev:hover{
     background-color: rgb(21, 92, 224);

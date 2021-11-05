@@ -216,7 +216,6 @@ window.onload = function(){
     
         var AfirstC = auto_image_list.firstElementChild;
         var AClonedF = AfirstC.cloneNode(true);  
-        var time = 0;
     
         let auto_curPos = 0;
 
@@ -233,10 +232,10 @@ window.onload = function(){
                 }
                 auto_curPos = auto_curPos + 1;
                 auto_image_list.style.left = -(auto_curPos)*imagewidth+"px";
-                time = setTimeout(() => {moveSlide()}, 2000);
+                setTimeout(() => {moveSlide()}, 2000);
             }
             if(auto_curPos == 5){
-                time = setTimeout(()=>{
+                setTimeout(()=>{
                     auto_paging[4].style.backgroundColor = "white";
                     auto_paging[0].style.backgroundColor = "cornflowerblue";
                     auto_image_list.style.transition = "all 0s";
@@ -406,17 +405,11 @@ window.onload = function(){
         for(let ap = 0 ; ap < 5; ap++){
             auto_paging[ap].addEventListener('click',function(e){
                 auto_image_list.style.left = -(e.target.id) * imagewidth +"px";
-                if(ap <= 5){
-                    clearTimeout(time);
-                }
                 for(let auto_s = 0 ; auto_s < 5; auto_s++){
                     auto_paging[auto_s].style.backgroundColor = "white";
                 }
                 e.target.style.backgroundColor = "cornflowerblue";
                 auto_curPos = parseInt(e.target.id);
-                setTimeout(()=>{
-                    moveSlide();
-                },2000);
 
 
             });
