@@ -13,7 +13,8 @@ h1{
 .vertical,
 .fade,
 .multi,
-.auto{
+.auto,
+.thumbCon{
     position: relative;
     width: 100%;
     height: 430px;
@@ -318,17 +319,24 @@ h1{
     box-sizing: border-box;
     font-size: 20px;
 }
-.multi_prev{
+/*멀티 슬라이드 + 썸네일 슬라이드 버튼*/
+.multi_prev,
+.thumb_prev{
     left:30px;
 }
-.multi_next{
+.multi_next,
+.thumb_next{
     right: 30px;
 }
 
 .multi_next:disabled,
 .multi_prev:disabled,
 .multi_next:disabled:hover,
-.multi_prev:disabled:hover{
+.multi_prev:disabled:hover,
+.thumb_prev:disabled,
+.thumb_next:disabled,
+.thumb_prev:disabled:hover,
+.thumb_next:disabled:hover{
     background-color: gray;
 }
 
@@ -359,15 +367,62 @@ h1{
     text-align: center;
     font-weight: bold;
 }
-/* 자동 슬라이드 */
-.auto_images{
+/* 자동 슬라이드 + '썸네일 + 내용 슬라이드' */
+.auto_images, .con_images{
     display: flex;
     position: relative;
     left: 0;
     width: 3600px;
     transition: all 0.5s;
 }
-.auto_images > img{
+.auto_images > img,
+.con_images > img{
     width: 600px;
     height: 300px;
 }
+
+/* 썸네일 + 내용 슬라이드 */
+.thumbCon{
+   height: 570px;
+}
+
+.con_images{
+    width: 3000px;
+}
+
+/*버튼*/
+.thumb_prev, .thumb_next{
+    position: absolute;
+    top: 430px;
+    border: none;
+    background-color: rgba(100, 149, 237, 0.8);
+    border-radius: 30px;
+    width: 50px; height: 50px;
+    padding: 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    z-index: 10;
+} 
+
+/*버튼들의 위치와 설정은 멀티 슬라이드와 함께*/
+.thumb_prev:hover,
+.thumb_next:hover{
+    background-color: rgb(67, 107, 182);
+}
+
+/* 썸네일 */
+.thumbnail{
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 380px;
+}
+.thumbnail > img{
+    width: 300px;
+    height: 150px;
+    box-sizing: border-box;
+    cursor: pointer;
+    transition: all 0.5s;
+}
+
